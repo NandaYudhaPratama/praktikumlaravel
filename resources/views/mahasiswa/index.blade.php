@@ -17,14 +17,21 @@ onymous">
         </div>
         @endif
         <div class="row">
-            <div class="col-10">
-                <h1>Data Mahasiswa</h1>
-            </div>
-            <div class="col-2">
+        <h1> Data Mahasiswa </h1>
+        </div>
+        <div class="row">
+                <div class="col" style="margin-top: 15px;">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary btn-sm floatright" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn btn-primary my-2 my-sm-0 floatright" data-toggle="modal" data-target="#exampleModal">
                     Tambah Data
                 </button>
+                </div>
+                <div class="col">
+                <form class="form-inline my-2 my-lg0" method="GET" action="/mahasiswa">
+                    <input name="cari" class="form-control w-75 mr-sm2" id="search" placeholder="Cari">
+                    <button type="submit" class="btn btn-outline-secondary my-2 my-sm0">Cari</button>
+                </form>
+                </div>
             </div>
             <table class="table table-hover">
                 <tr>
@@ -38,7 +45,10 @@ onymous">
                     <td>{{$mahasiswa->nama}}</td>
                     <td>{{$mahasiswa->nim}}</td>
                     <td>{{$mahasiswa->alamat}}</td>
-                    <td><a href="/mahasiswa/{{$mahasiswa->id}}/edit" class = "btn btn-warning btn-sm">Edit</a></td>
+                    <td>
+                    <a href="/mahasiswa/{{$mahasiswa->id}}/edit" class = "btn btn-warning btn-sm">Edit</a>
+                    <a href="/mahasiswa/delete/{{$mahasiswa->id}}" class = "btn btn-warning btn-sm" onclick="return confirm('yakin mau dihapus?')">Delete</a>
+                    </td>
                 </tr>
                 @endforeach
             </table>
