@@ -5,8 +5,7 @@
     <title>
     </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap
-/4.1.3/css/bootstrap.min.css" integrity="sha384-
-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="an
+/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="an
 onymous">
 </head>
 <body style="margin-top:20px;">
@@ -52,6 +51,7 @@ onymous">
                 </tr>
                 @endforeach
             </table>
+            <a href="/mahasiswa/exportpdf" class="btn btn-sm btn-success">Export PDF</a>
         </div>
     </div>
     <!-- Modal -->
