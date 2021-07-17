@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnGoogleIdToUsersTable extends Migration
+class AddFacebookIdToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddColumnGoogleIdToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('google_id')->after('email')->nullable();
+            $table->string('facebook_id')->after('email')->nullable();
         });
     }
 
@@ -25,8 +25,8 @@ class AddColumnGoogleIdToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('google_id');
+        Schema::table('_users', function (Blueprint $table) {
+            $table->dropColumn('facebook_id');
         });
     }
 }

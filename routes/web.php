@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PDFController;
+use App\Http\Controllers\FacebookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,11 @@ Route::post('/mahasiswa/{id}/update', [App\Http\Controllers\MahasiswaController:
 Route::get('/mahasiswa/delete/{id}', [App\Http\Controllers\MahasiswaController::class, 'delete'])->name('mahasiswa');
 Route::get('/mahasiswa/exportpdf', [App\Http\Controllers\MahasiswaController::class, 'exportpdf'])->name('mahasiswa'); 
 Route::get('auth/google', [App\Http\Controllers\GoogleController::class, 'redirectToGoogle'])->name('google.login'); 
-Route::get('auth/google/callback', [App\Http\Controllers\GoogleController::class, 'handleGoogleCallback'])->name('google.callback'); 
+Route::get('auth/google/callback', [App\Http\Controllers\GoogleController::class, 'handleGoogleCallback'])->name('google.callback');
+
+Route::get('/redirect', [FacebookController::class, 'redirectFacebook']);
+Route::get('/callback', [FacebookController::class, 'facebookCallback']); 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+

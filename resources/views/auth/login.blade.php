@@ -70,6 +70,9 @@
                         <a href="{{ route('google.login') }}" class="btn btn-danger">
                         {{ __('Sign in using Google+') }}
                         </a>
+                        <a href="{{ url('redirect') }}" class="btn btn-primary">
+                        {{ __('Sign in using Facebook') }}
+                        </a>
                     </div>
                 </div>
             </div>
